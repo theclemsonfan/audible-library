@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    environment:
+      PUBLIC_URL: ${PUBLIC_URL:-http://localhost:8787}
+    ports:
+      - "127.0.0.1:8787:8787"
+    volumes:
+      - next_chapter_data:/app/data
+volumes:
+  next_chapter_data:

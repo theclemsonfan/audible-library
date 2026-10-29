@@ -1,0 +1,11 @@
+data/
+.env
+.env.*
+!.env.example
+node_modules/
+qa-output/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.log
+.DS_Store
