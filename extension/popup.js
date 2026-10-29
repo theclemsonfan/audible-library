@@ -1,0 +1,4 @@
+const $ = id => document.getElementById(id);
+chrome.storage.local.get(["endpoint","token","status","lastSuccess"], v => { $("endpoint").value=v.endpoint||""; $("token").value=v.token||""; $("status").textContent=(v.status||"Not synced")+(v.lastSuccess?" · "+new Date(v.lastSuccess).toLocaleString():""); });
+$("save").onclick=async()=>{ await chrome.storage.local.set({endpoint:$("endpoint").value.trim(),token:$("token").value.trim()}); $("status").textContent="Settings saved"; };
+$("sync").onclick=async()=>{ $("status").textContent="Syncing…"; const result=await chrome.runtime.sendMessage({type:"SYNC"}); $("status").textContent=result.ok?"Synced "+result.count+" titles":result.error; };
