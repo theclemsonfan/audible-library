@@ -1,0 +1,7 @@
+{
+  "name": "next-chapter", "version": "0.2.0", "private": true, "type": "module",
+  "description": "Private audiobook series manager and read-only Audible companion",
+  "engines": {"node": ">=22.16.0"},
+  "scripts": {"start": "node server/index.mjs", "test": "node --test tests/*.test.mjs", "backup": "node scripts/backup.mjs", "check": "node scripts/check.mjs"},
+  "license": "UNLICENSED"
+}

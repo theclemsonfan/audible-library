@@ -1,0 +1,11 @@
+.git
+data
+.env
+.env.*
+node_modules
+qa-output
+tests
+extension
+*.zip
+*.log
+docs

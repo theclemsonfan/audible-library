@@ -1,20 +1,14 @@
 {
   "manifest_version": 3,
-  "name": "Next Chapter Audible Sync",
-  "version": "0.1.0",
-  "description": "Read-only Audible library collector; syncs to your private Next Chapter endpoint.",
-  "permissions": [
-    "storage",
-    "alarms",
-    "tabs", "scripting"
-  ],
-  "host_permissions": [
-    "https://www.audible.com/*"
-  ],
-  "background": {
-    "service_worker": "background.js"
-  },
-  "action": {
-    "default_popup": "popup.html"
-  }
+  "name": "Next Chapter — Audible Sync",
+  "version": "0.2.0",
+  "minimum_chrome_version": "120",
+  "description": "Read-only Audible metadata collection with weekly sync to your private Next Chapter app.",
+  "permissions": ["storage", "alarms", "scripting"],
+  "host_permissions": ["https://www.audible.com/*"],
+  "optional_host_permissions": ["https://*/*", "http://localhost/*", "http://127.0.0.1/*"],
+  "background": {"service_worker": "background.js", "type": "module"},
+  "action": {"default_popup": "popup.html", "default_title": "Next Chapter Sync"},
+  "options_page": "popup.html",
+  "content_security_policy": {"extension_pages": "script-src 'self'; object-src 'none'"}
 }
